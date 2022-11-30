@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/insert.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="<?=$_SERVER['ROOT']?>/css/main.css">
+    <link rel="stylesheet" href="<?=$_SERVER['ROOT']?>/css/insert.css">
+    <link rel="stylesheet" href="<?=$_SERVER['ROOT']?>/css/bootstrap.css">
 </head>
 <body>
     <header class="header">

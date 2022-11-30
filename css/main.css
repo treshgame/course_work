@@ -10,3 +10,30 @@
 .header__main{
     text-align: center;
 }
+/* common styles */
+.container{
+    margin: 0 auto;
+    min-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/* view pages */
+.view{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.view__header{
+    text-align: center;
+}
+.view__form{
+    padding: 20px;
+    width: 350px;
+    border: 2px #000 solid;
+}
+.btns_block{
+    display: flex;
+    justify-content: space-between;
+}
