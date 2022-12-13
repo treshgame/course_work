@@ -1,0 +1,22 @@
+.insert_main{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.insert_main__block{
+    border: 2px #000 solid;
+    box-shadow: 2px 2px 2px #000;
+    padding: 0px 10px;
+    margin: 20px;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.insert_main__block__header{
+    font-size: 18pt;
+}
