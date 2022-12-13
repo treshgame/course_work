@@ -36,16 +36,19 @@ switch($_REQUEST['table']){
     case 'equipment':
         $audience_num = null;
         $building_num = null;
-        $image = null;
         if($_REQUEST['audience']){
             $audience = explode('-', $_REQUEST['audience']);
             $audience_num = $audience[0];
             $building_num = $audience[1];
         }
-        if(!empty($_FILES['image']['tmp_name']) && trim($_FILES['image']['tmp_name']) != "")
+
+        $sql="UPDATE `equipment` SET `name`=?, `audiance_number`=?, `building_number`=? WHERE `id`=?";
+        $params = [$_REQUEST['name'], $audience_num, $building_num, $_REQUEST['id']];
+        if(!empty($_FILES['image']['tmp_name']) && trim($_FILES['image']['tmp_name']) != ""){
             $image = file_get_contents($_FILES['image']['tmp_name']);
-        $sql="UPDATE `equipment` SET `name`=?, `audiance_number`=?, `building_number`=?, `image`=? WHERE `id`=?";
-        $params = [$_REQUEST['name'], $audience_num, $building_num, $image, $_REQUEST['id']];
+            $sql="UPDATE `equipment` SET `name`=?, `audiance_number`=?, `building_number`=?, `image`=? WHERE `id`=?";
+            $params = [$_REQUEST['name'], $audience_num, $building_num, $image, $_REQUEST['id']];
+        }
         $location = "../views_pages/equipment_view.php";
         break;
 }

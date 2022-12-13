@@ -33,10 +33,13 @@ switch ($_REQUEST['table']){
             $audience_num = $audience[0];
             $building_num = $audience[1];
         }
-        if(!empty($_FILES['image']['tmp_name']) && trim($_FILES['image']['tmp_name']) != "")
+        
+        if(!empty($_FILES['image']['tmp_name']) && trim($_FILES['image']['tmp_name']) != ""){
             $image = file_get_contents($_FILES['image']['tmp_name']);
-        $sql="INSERT INTO `equipment`(`name`,`audiance_number`,`building_number`,`image`) VALUES (?, ?, ?, ?)";
-        $params = [$_REQUEST['name'], $audience_num, $building_num, $image];
+            $sql="INSERT INTO `equipment`(`name`,`audiance_number`,`building_number`,`image`) VALUES (?, ?, ?, ?)";
+            $params = [$_REQUEST['name'], $audience_num, $building_num, $image];
+        }
+            
         break;
 }
 $stmt = $db->prepare($sql);
