@@ -58,7 +58,7 @@
     <!-- ДОБАВЛЕНИЕ ОБОРУДОВАНИЯ -->
     <div class="insert_main__block">
         <h2 class="insert_main__block__header">Добавление оборудования</h2>
-        <form action="php/insert_in_db.php?table=equipment" method="post" >
+        <form action="php/insert_in_db.php?table=equipment" method="post" enctype='multipart/form-data'>
             <div class="mb-3 form-item">
                 <label for="" class="form-label">Название оборудования</label>
                 <input type="text" name="name" class="form-control" required>
@@ -74,6 +74,10 @@
                         <option value="<?=$aud['number']?>-<?=$aud['building_number']?>"><?="Аудитори: ".$aud['number']?> <?="Корпус: ".$aud['building_number']?><option>
                     <?}?>
                 </select>
+            </div>
+            <div class="mb-3 form-item">
+                <label for="" class="form-label">Фотография</label>
+                <input type="file" name="image" id="file" accept="gif|jpg|jpeg|png" class="form-control">
             </div>
             <input type="submit" name="submit">
         </form>    

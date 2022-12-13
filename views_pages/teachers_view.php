@@ -4,7 +4,7 @@
     $teachers = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <section class="view">
-    <h1 class="view__header">Учителя</h1>
+    <h1 class="view__header">Преподаватели</h1>
     <div class="container">
     <?
         foreach ($teachers as $teacher) {?>

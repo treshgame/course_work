@@ -8,7 +8,7 @@
     <div class="container">
     <?
         foreach ($equips as $equip) {?>
-            <form action="../php/update_in_db.php?table=equipment&id=<?=$equip['id']?>" class="view__form" method="post">
+            <form action="../php/update_in_db.php?table=equipment&id=<?=$equip['id']?>" class="view__form" method="post" enctype='multipart/form-data'>
                 <div class="mb-3">
                     <label class="form-label">Название</label>
                     <input class="form-control" type="text" name="name" value="<?=$equip['name']?>">
@@ -26,6 +26,15 @@
                             <option>
                         <?}?>
                     </select>
+                </div>
+                <?if($equip['image'] != null){?>
+                <div class="mb-3">
+                    <img src="data:image/png;base64,<?=base64_encode($equip['image'])?>" width="120" height="150" alt="img">
+                </div>
+                <?}?>
+                <div class="mb-3 form-item">
+                    <label for="" class="form-label">Фотография</label>
+                    <input type="file" name="image" id="file" accept="gif|jpg|jpeg|png" class="form-control">
                 </div>
                 <div class="btns_block">
                     <input type="submit" name="submit" value="Обновить" class="btn btn-primary">
